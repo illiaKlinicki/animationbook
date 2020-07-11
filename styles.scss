@@ -1,0 +1,126 @@
+@mixin flexItem($algn, $jst, $drct) {
+  display: flex;
+  align-items: $algn;
+  justify-content: $jst;
+  flex-direction: $drct;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'IBM Plex Serif', serif;
+}
+
+.slick-prev,
+.slick-next {
+  display: none !important;
+}
+
+.page {
+  padding: 20px 15vw;
+  outline: none;
+
+  @media screen and(max-width:480px) {
+    padding: 20px;
+  }
+
+  &__title {
+    font-weight: 300;
+    font-size: 50px;
+    margin: 20px auto 30px auto;
+    width: 90%;
+
+    @media screen and(max-width:480px) {
+      font-size: 20px;
+    }
+  }
+
+  &__text {
+    line-height: 31px;
+    font-size: 25px;
+    width: 90%;
+    margin: 0 auto;
+    text-align: justify;
+
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
+
+    @media screen and(max-width:480px) {
+      font-size: 16px;
+    }
+  }
+}
+
+.chapterEndScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  @include flexItem(center, center, row);
+
+  .modal {
+    background: #fff;
+    @include flexItem(center, center, column);
+    padding: 50px;
+    border-radius: 10px;
+  }
+
+  &__overlay {
+    position: absolute;
+    background: #000;
+    opacity: 0.5;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &__icon {
+    font-size: 50px;
+    margin-right: 30px;
+
+    @media screen and (max-width: 480px) {
+      margin-right: 0;
+    }
+  }
+
+  .innerContainer {
+    margin-top: 20px;
+    @media screen and (max-width: 480px) {
+      @include flexItem(center, center, column);
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  &__timeout,
+  &__keepReading {
+    border: none;
+    cursor: pointer;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-size: 25px;
+    background: #6bb36b;
+    color: #fff;
+
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+
+    @media screen and (max-width: 480px) {
+      margin-top: 10px;
+
+      &:not(:first-child) {
+        margin-left: 0;
+      }
+    }
+  }
+}

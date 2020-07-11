@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+    />
+    <title>Pappy - book</title>
+  </head>
+  <body>
+    <div class="container"></div>
+    <p style="text-align: center;padding-bottom: 20px;"><b>Developed by <a href="https://www.facebook.com/BogdanaBozhok">Bogdana Bozhok</a></b></p>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+    
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <script src="./data.js"></script>
+    <script src="./index.js"></script>
+    <iframe src="./animations/audio.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+    </iframe> 
+  <audio autoplay loop  id="playAudio">
+    <source src="./animations/audio.mp3">
+</audio>
+    <script>
+        function handleClick(){
+          $(document).ready(function(){
+            $('.chapterEndScreen').remove();
+            console.log('good');
+          });
+        }
+        var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+  if (!isChrome){
+      $('#iframeAudio').remove()
+  }
+  else {
+      $('#playAudio').remove() // just to make sure that it will not have 2x audio in the background 
+  }
+    </script>
+     </body>
+</html>
